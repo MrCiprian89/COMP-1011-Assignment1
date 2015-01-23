@@ -2,14 +2,16 @@
 public class Hero {
 //PRIVATE VARIABLES ##################################################################
 	private int strength,speed,health;
+	
+//PUBLIC VARIABLES ##################################################################
 	public String name;
 	
-//CONSTRUCTOR
+//CONSTRUCTOR ########################################################################
 	public Hero(String name){
 		this.name = name;
 		generateAbilities();
 	}
-//PRIVATE METHODS
+//PRIVATE METHODS ####################################################################
 	private void generateAbilities(){
 		this.strength = (int) (Math.random()*100+1);
 		this.speed = (int) (Math.random()*100+1);
@@ -29,11 +31,12 @@ public class Hero {
 		return dmgDealt;
 	}
 	
-//PUBLIC METHODS
+//PUBLIC METHODS ######################################################################
 	public void fight(){
 		if(hitAttempt()){
-			System.out.println(hitDamage());
+			System.out.println(this.name + " succesfully hit for " + hitDamage() + " damage");
 		}
+		else{System.out.println(this.name + " missed the attack");}
 	}
 	public void show(){
 		System.out.println(this.name +"'s abilites are \n Strength: " + this.strength + "\n Speed: " +this.speed + "\n Health: " + this.health);

@@ -5,7 +5,7 @@
 /**
  * @author Steve
  * Class Description: This Project creates a Hero class that will be instantiated and tested
- * @version 0.1 Class structures created
+ * @version 0.2 Hero Methods created and tested with Main Class
  */
 public class Main {
 
@@ -13,8 +13,9 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Hero Steve = new Hero("Steve");
+		Steve.show();
+		Steve.fight();
 	}
 
 }
