@@ -12,16 +12,22 @@ public class Hero {
 		generateAbilities();
 	}
 //PRIVATE METHODS ####################################################################
+	//used to roll the numbers in each method
+	private int randomRoll(int maxNumber){
+		int numberRolled = (int) Math.floor((Math.random()*maxNumber +1));
+		return numberRolled;
+		
+	}
 	//creates each Hero's ability variables randomly between 1 and 100
 	private void generateAbilities(){
-		this.strength = (int) (Math.random()*100+1);
-		this.speed = (int) (Math.random()*100+1);
-		this.health = (int) (Math.random()*100+1);
+		this.strength = randomRoll(100);
+		this.speed = randomRoll(100);
+		this.health = randomRoll(100);
 	}
 	//randomly returns whether or not a hit was landed based on Hero's chance to hit
 	private boolean hitAttempt(){
 		int hitChance = 2; // chance that lands a hit out of a value of 10
-		int checkHitSuccess = (int) (Math.random()*10 +1);
+		int checkHitSuccess = randomRoll(10);
 		if (checkHitSuccess > hitChance){
 			return false;
 		}
@@ -29,11 +35,10 @@ public class Hero {
 	}
 	//method that calculates the damage a Hero deals based on their strength added to a random number
 	private int hitDamage(){
-		int dmgBonus = (int)(Math.random()*6 +1);
-		int dmgDealt = this.strength + dmgBonus;
+		int dmgBonus = randomRoll(6);
+		int dmgDealt = this.strength * dmgBonus;
 		return dmgDealt;
 	}
-	
 //PUBLIC METHODS ######################################################################
 	//method that prints to console if Hero misses an attack or how much damage he deals on a succesful attack
 	public void fight(){

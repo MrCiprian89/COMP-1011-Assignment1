@@ -10,13 +10,10 @@
  */
 public class Main {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		Hero Steve = new Hero("Steve");
 		Steve.show();
 		Steve.fight();
-	}
 
+}
 }
